@@ -26,7 +26,7 @@ export const Home = () => {
   return (
     <div>
       <NavBar />
-      <Container maxWidth='false'>
+      <Container maxWidth='sm'>
         <Grid
           container
           spacing={2}

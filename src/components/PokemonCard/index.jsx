@@ -1,13 +1,31 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
-import CardActions from '@mui/material/CardActions';
+// import CardActions from '@mui/material/CardActions';
 
 export default function PokemonCard({ pokemon }) {
+  const [pokemonImageUrl, setPokemonImageUrl] = useState([]);
+
+  useEffect(() => {
+    getPokemonImageUrl();
+  }, []);
+
+  const getPokemonImageUrl = () => {
+    const url = pokemon.url;
+    axios
+      .get(url)
+      .then((res) => {
+        setPokemonImageUrl(res.data.sprites.front_default);
+      })
+      .catch((err) => console.log(err));
+  };
+
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -18,8 +36,8 @@ export default function PokemonCard({ pokemon }) {
         <CardMedia
           component='img'
           height='140'
-          image='/src/images/cards/who_is_that_pokemon.png'
-          alt='Quem é esse Pokémon?'
+          image={pokemonImageUrl}
+          alt={`imagem frontal de ${pokemon.name}`}
         />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>

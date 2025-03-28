@@ -3,10 +3,10 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
@@ -54,9 +54,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1, marginBottom: '2em' }}>
-      <AppBar position='static'>
+      <AppBar position='static' sx={{ backgroundColor: '#f6142c' }}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size='large'
             edge='start'
             color='inherit'
@@ -64,14 +64,14 @@ export default function NavBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography
             variant='h6'
             noWrap
             component='div'
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Pokedex
           </Typography>
           <Search>
             <SearchIconWrapper>
