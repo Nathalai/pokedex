@@ -12,8 +12,6 @@ export default function PokemonCard({ pokemon }) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  console.log(pokemon);
-
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
