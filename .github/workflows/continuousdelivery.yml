@@ -20,11 +20,7 @@ jobs:
             index.html
             README.md
             public/pokeball.svg'
-            src/main.jsx
-            src/App.jsx
-            src/pages/Home.jsx
-            src/components/Navbar/index.jsx
-            src/components/PokemonCard/index.jsx'
+            **.jsx
             src/images/cards/who_is_that_pokemon.png
 
   deploy:
@@ -33,6 +29,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: pokedex-projeto-zipado.zip
+          name: pokedex-projeto-zipado
       - name: Display structure of downloaded files
         run: ls -R
