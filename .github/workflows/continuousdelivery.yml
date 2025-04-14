@@ -15,7 +15,7 @@ jobs:
       - name: Simulando Continuous Delivery
         uses: actions/upload-artifact@v4
         with:
-          name: pokedex-projeto-zipado.zip
+          name: pokedex-projeto-zipado
           path: |
             index.html
             README.md
