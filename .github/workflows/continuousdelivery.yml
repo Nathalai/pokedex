@@ -19,6 +19,10 @@ jobs:
           path: |
             index.html
             README.md
-            public/pokeball.svg
-            '**.jsx'
+            public/pokeball.svg'
+            src/main.jsx
+            src/App.jsx
+            src/pages/Home.jsx
+            src/components/Navbar/index.jsx
+            src/components/PokemonCard/index.jsx'
             src/images/cards/who_is_that_pokemon.png
