@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 // import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
+import { capitalizeFirstLetter } from '../../utils/utils';
 // import CardActions from '@mui/material/CardActions';
 
 export default function PokemonCard({ pokemon }) {
@@ -23,11 +24,7 @@ export default function PokemonCard({ pokemon }) {
         .catch((err) => console.log(err));
     };
     getPokemonImageUrl();
-  }, []);
-
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
+  }, [pokemon.url]);
 
   return (
     <Card sx={{ maxWidth: 345 }}>
