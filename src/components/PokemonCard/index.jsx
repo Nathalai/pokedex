@@ -13,18 +13,17 @@ export default function PokemonCard({ pokemon }) {
   const [pokemonImageUrl, setPokemonImageUrl] = useState([]);
 
   useEffect(() => {
+    const getPokemonImageUrl = () => {
+      const url = pokemon.url;
+      axios
+        .get(url)
+        .then((res) => {
+          setPokemonImageUrl(res.data.sprites.front_default);
+        })
+        .catch((err) => console.log(err));
+    };
     getPokemonImageUrl();
   }, []);
-
-  const getPokemonImageUrl = () => {
-    const url = pokemon.url;
-    axios
-      .get(url)
-      .then((res) => {
-        setPokemonImageUrl(res.data.sprites.front_default);
-      })
-      .catch((err) => console.log(err));
-  };
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
