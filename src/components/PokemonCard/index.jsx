@@ -24,7 +24,7 @@ export default function PokemonCard({ pokemon }) {
         .catch((err) => console.log(err));
     };
     getPokemonImageUrl();
-  }, []);
+  }, [pokemon.url]);
 
   return (
     <Card sx={{ maxWidth: 345 }}>
