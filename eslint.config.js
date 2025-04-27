@@ -10,9 +10,9 @@ export default [
     languageOptions: {
       ecmaVersion: 2020,
       globals: {
-        ...globals.browser, // Mantém as globais do browser
-        jest: 'readonly', // Adiciona o Jest como global
-        ...globals.jest, // Pode adicionar explicitamente as variáveis globais do Jest
+        ...globals.browser,
+        jest: 'readonly',
+        ...globals.jest,
       },
       parserOptions: {
         ecmaVersion: 'latest',
